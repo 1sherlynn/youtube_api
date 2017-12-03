@@ -31,7 +31,10 @@ http://console.developers.google.com/
 - after signing up, we will install a small package which will make searching simple (youtube api search)
 - given an API key and a search term, it will make an api request for us and return a list of videos that match the search term 
 
+```
 $ npm install --save youtube-api-search
+```
+
 
 __________________________________
 
@@ -44,12 +47,16 @@ __________________________________
 
 1. Declare event handler: a function that should be ran when an event occurs
 e.g.
+
+```
 onInputChange() {
 	
 }
+```
 
 2. Pass event handler to element that we want to monitor for events 
 e.g.
+```
 class SearchBar extends Component {
 	render () {
 		return (
@@ -58,6 +65,7 @@ class SearchBar extends Component {
 			</div>
 			); 
 	}
+```
 __________________________________
 
 
@@ -158,18 +166,22 @@ __________________________________
 
 Summary: 
 1. from index.js: 
+```
 class App extends Component {
 ... 
 	<VideoList 
 		onVideoSelect={ selectedVideo => this.setState( {selectedVideo} ) }
 		videos={this.state.videos} />
+```
 // takes a selectedVideo and updates the selected video, and we pass this action as a property into onVideoSelect
 
 2. then we pass this property (onVideoSelect) into const VideoList = (props) .. in video_list.js: 
+```
 return <VideoListItem 
 		onVideoSelect={props.onVideoSelect}
 		video={video} 
 		key={video.etag} /> 
+```
 
 whereby VideoList takes that property and pass it into VideoListItem (above)
 
@@ -179,10 +191,20 @@ __________________________________
 
 31: Trottling Search term input using LODASH 
 
+```
 $ npm install --save lodash 
+```
 
 then in index.js at the top: 
+
+```
 import _ from 'lodash'; 
+```
+
+__________________________________
+
+32: REACT WRAP-UP
+
 
 
 
