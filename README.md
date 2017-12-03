@@ -222,7 +222,7 @@ __________________________________
 - Functional-based is used when we have a simple component that takes some number of properties and returns some static JSX (which is always the same). 
 Benefits: lightweight and fast. Code to write is less.
 
-2. State
+2. STATE
 - Initialise state in the constructor 
 ```
 	constructor(props) {
@@ -241,7 +241,9 @@ Benefits: lightweight and fast. Code to write is less.
 
 - whenever we update the state, the component instantly re-renders, along with any children the component contains. 
 
-- State in pure React is very component-siloed whereas State in Redx refers to application state
+
+- State in pure React is very component-siloed whereas State in Redux refers to application state
+
 
 
 3. IMPORT and EXPORT statements 
