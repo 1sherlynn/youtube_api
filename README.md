@@ -1,4 +1,4 @@
-# React-based Application 
+# React-based Application (learning notes)
 
 
 ```
@@ -6,21 +6,30 @@
 > npm start
 ```
 
+__________________________________
+
 5 and 6: JSX 
+
 - Components --> will produce HTML
 - JSX cannot be intepreted by the browser and hence needing babel and webpack to translate to vanilla JS 
 
+__________________________________
+
 7 and 8 IMPORT STATEMENTS REACT AND REACTDOM: 
+
 React: used to create and manage our components
 ReactDOM: used to interact will the actual DOM 
+__________________________________
 
 9 COMPONENT INSTANCES: 
+
 - We need to make an INSTANCE of a component to pass it to React.createElement (else it will throw an error)
 - we cannot directly pass a class to React.createElement
 
 __________________________________
 
 12: YOUTUBE SEARCH API
+
 - free but require API key to use to identify ourselves 
 - Go to: 
 http://console.developers.google.com/
@@ -34,7 +43,6 @@ http://console.developers.google.com/
 ```
 $ npm install --save youtube-api-search
 ```
-
 
 __________________________________
 
@@ -70,6 +78,7 @@ __________________________________
 
 
 16: INTRODUCTION TO STATE
+
 - State is a plain JS object that is used to record in React, user events 
 - Class based component and has its own state object 
 - whenever a component state is changed, the components immediately re-renders, and forces its children to re-render as well 
@@ -99,6 +108,7 @@ Side effects from recording state
 __________________________________
 
 18: CONTROLLED COMPONENTS 
+
 - previously (lecture 16 above), the input controls the state. This is vice versa
 - we don't react based on what the user input
 - the state dictates the value of the input
@@ -112,6 +122,7 @@ __________________________________
 __________________________________
 
 19: BREATHER AND REVIEW
+
 React topics: 
 1. JSX
 2. Components 
@@ -140,6 +151,7 @@ Whenever the user enters some text, the state is updated, which causes the entir
 __________________________________
 
 20: YOUTUBE SEARCH RESPONSE 
+
 1. need to make a call to the youtube API to get some information 
 2. once we get that information, we need to spread that info throughout the entire app
 3. should be able to search for videos and then return response that actual list of videos need to flow throughout all our components 
@@ -205,12 +217,48 @@ __________________________________
 
 32: REACT WRAP-UP
 
+1. Difference between Class-based versus Functional-based component 
+- Class-based is used when we want to have a concept of state 
+- Functional-based is used when we have a simple component that takes some number of properties and returns some static JSX (which is always the same). 
+Benefits: lightweight and fast. Code to write is less.
+
+2. State
+- Initialise state in the constructor 
+```
+	constructor(props) {
+		super(props); 
+
+		this.state = {} ; 
+
+```
+
+- Update state using this.setState() 
+```
+<VideoList 
+	onVideoSelect={ selectedVideo => this.setState( {selectedVideo} ) } />
+
+```
+
+- whenever we update the state, the component instantly re-renders, along with any children the component contains. 
+
+- State in pure React is very component-siloed whereas State in Redx refers to application state
 
 
+3. IMPORT and EXPORT statements 
+- when we use a library, we just use the name of the library. E.g
+```
+import ReactDOM from 'react-dom'; 
+```
+
+- when we use a file we wrote, we need to specify a relative path. E.g: 
+```
+import SearchBar from './components/search_bar';
+```
 
 
-
-
+4. CALLBACKS
+- great way to do parent-child communication but may get confusing 
+- use of Redux to minimise callbacks 
 
 
 
